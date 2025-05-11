@@ -2,7 +2,7 @@
 
 CabinMap is a seat selection interface inspired by airline booking systems. This project is built as part of a frontend technical test using **Next.js 15+, Tailwind CSS 4**, and **TypeScript**.
 
-It displays detailed airplane seat maps with segment, seat type, pricing, and passenger allocation — all based on a mock JSON response (acting as the backend API).
+It displays detailed airplane seat maps with segment, seat type, pricing, and passenger allocation — all based on a mock JSON response (acting as the backend API). To complement the seat map response, additional mock data for airport IATA codes was also included to enrich the flight segment display.
 
 ---
 
