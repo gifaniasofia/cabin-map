@@ -38,7 +38,7 @@ It displays detailed airplane seat maps with segment, seat type, pricing, and pa
 Clone the repository and install dependencies:
 
 ```shell
-git clone https://github.com/gifaniasofia/cabin-map
+git clone https://github.com/gifaniasofia/cabin-map.git
 cd cabin-map
 
 npm install
