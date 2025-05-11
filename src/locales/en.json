@@ -1,0 +1,88 @@
+{
+  "meta_data": {
+    "main": {
+      "title": "CabinMap | Flight Seat Booking UI",
+      "description": "Choose your preferred seat for your upcoming flight with our easy-to-use seat selection page. View the cabin layout, select available seats, and fly in comfort."
+    }
+  },
+  "seat_plan": {
+    "header": {
+      "title": "Select Seats"
+    },
+    "flight": {
+      "show_details": "Show flight details",
+      "transit": "Transit",
+      "direct": "Direct",
+      "flight_number": "Flight Number"
+    },
+    "passenger": {
+      "title": "Passengers",
+      "choosing_seat": "Choosing seat"
+    },
+    "legend": {
+      "extra_legroom": {
+        "title": "Extra Legroom",
+        "description": "Extra legroom seats provide additional space to stretch your legs, often located near exit or bulkhead rows."
+      },
+      "regular": {
+        "title": "Regular",
+        "description": "Regular seats include standard window, aisle, or middle seats. These do not include exit or extra legroom rows."
+      },
+      "unavailable": {
+        "title": "Unavailable",
+        "description": "This seat is currently not available for selection, either occupied or restricted."
+      },
+      "selected": {
+        "title": "Selected",
+        "description": "The seat you have currently selected."
+      },
+      "previously_selected": {
+        "title": "Previously Selected",
+        "description": "Seat that was selected in a previous session or by another traveler in your group."
+      },
+      "exit": {
+        "title": "Exit",
+        "description": "Indicates the location of an emergency exit door."
+      }
+    },
+    "seat": {
+      "types": {
+        "extra_legroom": "Extra Legroom",
+        "regular": "Regular"
+      },
+      "characteristics": {
+        "L": "Experience more space and comfort with extra legroom seats where available.",
+        "E": "Exit row seat.",
+        "LS": "Left side of the aircraft.",
+        "RS": "Right side of the aircraft.",
+        "W": "Window seat.",
+        "A": "Aisle seat.",
+        "OW": "Over the wing."
+      },
+      "limitations": {
+        "NEXT_TO_EXIT_DOOR": "This seat is located next to an emergency exit and may require assisting in emergency situations.",
+        "NOT_ALLOWED_FOR_INFANT": "This seat is not allowed for infants.",
+        "NOT_ALLOWED_FOR_PASSENGER_WITH_MEDICAL_CONDITION": "This seat is not allowed for passengers with medical conditions, impairments, or special needs."
+      },
+      "labels": {
+        "restrictions": "Restrictions:",
+        "agreement": "I have read and agree to the terms and conditions",
+        "details": "Seat Detail"
+      },
+      "actions": {
+        "select": "Select Seat"
+      }
+    },
+    "summary": {
+      "passenger": "Passengers",
+      "passenger_label": "passengers",
+      "seat": "Seat",
+      "total": "Total Price",
+      "legend": "Legend",
+      "button": "Apply & Continue"
+    },
+    "price": {
+      "default_currency": "USD"
+    }
+  }
+}

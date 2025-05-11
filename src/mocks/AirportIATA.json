@@ -1,0 +1,77 @@
+{
+  "KUL": {
+    "city": "Kuala Lumpur",
+    "country": "Malaysia",
+    "airport": "Kuala Lumpur International Airport"
+  },
+  "CGK": {
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "airport": "Soekarno–Hatta International Airport"
+  },
+  "DPS": {
+    "city": "Denpasar (Bali)",
+    "country": "Indonesia",
+    "airport": "Ngurah Rai International Airport"
+  },
+  "SIN": {
+    "city": "Singapore",
+    "country": "Singapore",
+    "airport": "Changi Airport"
+  },
+  "HKG": {
+    "city": "Hong Kong",
+    "country": "Hong Kong",
+    "airport": "Hong Kong International Airport"
+  },
+  "BKK": {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "airport": "Suvarnabhumi Airport"
+  },
+  "NRT": {
+    "city": "Tokyo",
+    "country": "Japan",
+    "airport": "Narita International Airport"
+  },
+  "ICN": {
+    "city": "Seoul",
+    "country": "South Korea",
+    "airport": "Incheon International Airport"
+  },
+  "SYD": {
+    "city": "Sydney",
+    "country": "Australia",
+    "airport": "Sydney Kingsford Smith Airport"
+  },
+  "LAX": {
+    "city": "Los Angeles",
+    "country": "United States",
+    "airport": "Los Angeles International Airport"
+  },
+  "JFK": {
+    "city": "New York",
+    "country": "United States",
+    "airport": "John F. Kennedy International Airport"
+  },
+  "DXB": {
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "airport": "Dubai International Airport"
+  },
+  "DOH": {
+    "city": "Doha",
+    "country": "Qatar",
+    "airport": "Hamad International Airport"
+  },
+  "LHR": {
+    "city": "London",
+    "country": "United Kingdom",
+    "airport": "London Heathrow Airport"
+  },
+  "CDG": {
+    "city": "Paris",
+    "country": "France",
+    "airport": "Charles de Gaulle Airport"
+  }
+}

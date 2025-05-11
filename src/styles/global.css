@@ -1,0 +1,191 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-poppins: 'Poppins', 'sans-serif';
+
+  --breakpoint-8xl: 96rem;
+  --breakpoint-9xl: 120rem;
+
+  --text-2xs: 0.813rem; /* 13px */
+  --text-1.75xl: 1.438rem; /* 23px */
+
+  --drop-shadow-aircraft: 0px 0px 88.4px rgba(0, 0, 0, 0.25);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--text-main);
+
+  --color-popover: var(--background);
+  --color-popover-foreground: var(--text-main);
+
+  --color-border: var(--neutral-gray-06);
+
+  --color-seat-legroom: var(--color-emerald-600);
+  --color-seat-primary: var(--color-primary);
+  --color-seat-disable: var(--color-neutral-gray-05);
+  --color-seat-previous-selected: var(--color-rose-700);
+  --color-cabin-facilities: var(--color-neutral-gray-02);
+
+  /* Primary Colors */
+  --color-primary: var(--primary);
+  --color-primary-shade-01: var(--primary-shade-01);
+  --color-primary-shade-02: var(--primary-shade-02);
+  --color-primary-shade-03: var(--primary-shade-03);
+  --color-primary-shade-04: var(--primary-shade-04);
+  --color-primary-shade-05: var(--primary-shade-05);
+  --color-primary-shade-06: var(--primary-shade-06);
+  --color-primary-tint-01: var(--primary-tint-01);
+  --color-primary-tint-02: var(--primary-tint-02);
+  --color-primary-tint-03: var(--primary-tint-03);
+  --color-primary-tint-04: var(--primary-tint-04);
+  --color-primary-tint-05: var(--primary-tint-05);
+
+  /* Mapped Neutral */
+  --color-neutral-black: var(--neutral-black);
+  --color-neutral-gray-01: var(--neutral-gray-01);
+  --color-neutral-gray-02: var(--neutral-gray-02);
+  --color-neutral-gray-03: var(--neutral-gray-03);
+  --color-neutral-gray-04: var(--neutral-gray-04);
+  --color-neutral-gray-05: var(--neutral-gray-05);
+  --color-neutral-gray-06: var(--neutral-gray-06);
+  --color-neutral-gray-07: var(--neutral-gray-07);
+  --color-neutral-gray-08: var(--neutral-gray-08);
+  --color-neutral-white: var(--neutral-white);
+
+  /* Mapped Semantics */
+  --color-semantics-error-01: var(--semantics-error-01);
+  --color-semantics-error-02: var(--semantics-error-02);
+  --color-semantics-error-03: var(--semantics-error-03);
+  --color-semantics-success-01: var(--semantics-success-01);
+  --color-semantics-success-02: var(--semantics-success-02);
+  --color-semantics-success-03: var(--semantics-success-03);
+  --color-semantics-warning-01: var(--semantics-warning-01);
+  --color-semantics-warning-02: var(--semantics-warning-02);
+  --color-semantics-warning-03: var(--semantics-warning-03);
+  --color-semantics-info: var(--semantics-info);
+
+  /* Mapped Background */
+  --color-background-gray-06: var(--background-gray-06);
+  --color-background-gray-08: var(--background-gray-08);
+  --color-background-white: var(--background-white);
+
+  /* Mapped Stroke */
+  --color-stroke-disable: var(--stroke-disable);
+  --color-stroke-active: var(--stroke-active);
+
+  /* Mapped Text */
+  --color-text-main: var(--text-main);
+  --color-text-gray: var(--text-gray);
+  --color-text-disable: var(--text-disable);
+  --color-text-white: var(--text-white);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: #ffffff;
+
+  --primary: #000080;
+  --primary-shade-01: #00004d;
+  --primary-shade-02: #001d47;
+  --primary-shade-03: #000033;
+  --primary-shade-04: #000026;
+  --primary-shade-05: #00001a;
+  --primary-shade-06: #00000d;
+  --primary-tint-01: #2e2e99;
+  --primary-tint-02: #5c5cb3;
+  --primary-tint-03: #8a8acc;
+  --primary-tint-04: #b8b8e6;
+  --primary-tint-05: #e6e6ff;
+
+  /* Neutral */
+  --neutral-black: #0c0c0c;
+  --neutral-gray-01: #202020;
+  --neutral-gray-02: #404040;
+  --neutral-gray-03: #606060;
+  --neutral-gray-04: #868686;
+  --neutral-gray-05: #adadad;
+  --neutral-gray-06: #cbcbcb;
+  --neutral-gray-07: #dfdfdf;
+  --neutral-gray-08: #ededed;
+  --neutral-white: #f9f9f9;
+
+  /* Semantics – Error */
+  --semantics-error-01: #b71c1c;
+  --semantics-error-02: #f44336;
+  --semantics-error-03: #fecdd2;
+
+  /* Semantics – Success */
+  --semantics-success-01: #1e8000;
+  --semantics-success-02: #7dcc65;
+  --semantics-success-03: #bdffa9;
+
+  /* Semantics – Warning */
+  --semantics-warning-01: #ff8f00;
+  --semantics-warning-02: #ffc107;
+  --semantics-warning-03: #ffecb3;
+
+  /* Semantics – Info */
+  --semantics-info: #4890e5;
+
+  /* Background */
+  --background-gray-06: #cbcbcb;
+  --background-gray-08: #ededed;
+  --background-white: #f9f9f9;
+
+  /* Stroke */
+  --stroke-disable: #ededed;
+  --stroke-active: #000080;
+
+  /* Text */
+  --text-main: #000033;
+  --text-gray: #868686;
+  --text-disable: #adadad;
+  --text-white: #f9f9f9;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+  button {
+    @apply disabled:cursor-default cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-10;
+  }
+
+  .hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hidden-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 50px;
+  height: 0px;
+}

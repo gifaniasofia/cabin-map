@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CabinMap
 
-## Getting Started
+CabinMap is a seat selection interface inspired by airline booking systems. This project is built as part of a frontend technical test using **Next.js 15+, Tailwind CSS 4**, and **TypeScript**.
 
-First, run the development server:
+It displays detailed airplane seat maps with segment, seat type, pricing, and passenger allocation — all based on a mock JSON response (acting as the backend API).
 
-```bash
+---
+
+## 🌐 Live Demo
+
+🔗 https://cabin-map.vercel.app
+
+🔗 https://drive.google.com/drive/folders/1QgFyuFBuczxkhuRVoDNJ9uNLgg2Y8BFF?usp=sharing
+
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js 15](https://nextjs.org/) – App Router, Metadata API
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Lucide Icons](https://lucide.dev/)
+- [Radix UI](https://www.radix-ui.com/)
+- [date-fns](https://date-fns.org/)
+- Optional: [Framer Motion](https://www.framer.com/motion/)
+
+---
+
+### 🚀 Requirements
+
+- Node.js 20+
+- npm or yarn
+
+---
+
+### 🛠 Getting Started
+
+Clone the repository and install dependencies:
+
+```shell
+git clone https://github.com/gifaniasofia/cabin-map
+cd cabin-map
+
+npm install
+# or
+yarn install
+```
+
+Start the development server:
+
+```shell
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to see the project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🧭 Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```shell
+.
+├── README.md                       # README file
+├── public                          # Static assets
+├── src
+│   ├── app                         # Next JS App (App Router)
+│   ├── components                  # Shared components (icons, UI, layout)
+│   ├── features                    # Components specific to a feature
+│   ├── hooks                       # Custom React hooks
+│   ├── libs                        # External libraries & configs
+│   ├── locales                     # Locales folder
+│   ├── styles                      # Styles folder
+│   ├── types                       # Type definitions
+│   └── utils                       # Utilities folder
+└── tsconfig.json                   # TypeScript configuration
+```
 
-## Learn More
+### 📦 Build & Deploy
 
-To learn more about Next.js, take a look at the following resources:
+Build an optimized production version:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+$ npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run the production build locally:
 
-## Deploy on Vercel
+```shell
+$ npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This command starts a local server using the production build. Then open http://localhost:3000 in preferred browser to see the result.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🔖 Note
+This project was built solely for demonstration and assessment purposes.
