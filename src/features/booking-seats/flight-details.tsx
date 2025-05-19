@@ -5,9 +5,8 @@ import { FlightLandingIcon } from '@/components/icons/flight-landing';
 import { FlightTakeOffIcon } from '@/components/icons/flight-takeoff';
 import { AccordionItem } from '@/components/ui/accordion';
 import messages from '@/locales/en.json';
-import airportIata from '@/mocks/AirportIATA.json';
-import { AirportData } from '@/types/airport';
 import { SegmentInfo } from '@/types/seat-map';
+import { getAirportName } from '@/utils/airport-iata';
 import { formatDurationFromDecimal } from '@/utils/format-duration';
 
 import { Card, CardTitle } from './card';
@@ -28,10 +27,8 @@ export const FlightDetails = ({ segment }: FlightDetailsProps) => {
 
   const originCode = segment.origin;
   const destinationCode = segment.destination;
-  const originAirport =
-    (airportIata as AirportData)[originCode]?.airport ?? '-';
-  const destinationAirport =
-    (airportIata as AirportData)[destinationCode]?.airport ?? '-';
+  const originAirport = getAirportName(originCode);
+  const destinationAirport = getAirportName(destinationCode);
 
   const departure = format(
     new Date(segment?.departure),

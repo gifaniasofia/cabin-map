@@ -23,33 +23,35 @@ export const BookingSeats = ({ segmentSeatMaps }: BookingSeatsProps) => {
     mappingPassengers(segmentSeatMaps)
   );
   const [activePassengerIndex, setActivePassengerIndex] = useState<number>(0);
-  const [updatedPassengerId, setUpdatedPassengerId] = useState<string>(
-    filterActivePassengers(passengers, 0)?.[0]?.id
-  );
 
   const segmentSeatMapActive = segmentSeatMaps?.[segmentSeatMapIdxActive];
   const passengerSeatMapActive =
     segmentSeatMapActive?.passengerSeatMaps?.[activePassengerIndex];
-  const seatCodes = useMemo(() => {
-    return passengers?.map(p => p?.selectedSeat?.code).filter(Boolean);
-  }, [passengers]);
 
-  const handleChangeTab = useCallback(
-    (tabIdx: number) => {
-      setSegmentSeatMapIdxActive(tabIdx);
-      setActivePassengerIndex(0);
-      setUpdatedPassengerId(
-        filterActivePassengers(passengers, tabIdx)?.[0]?.id
-      );
-    },
-    [passengers]
-  );
+  const showedPassengers = useMemo(() => {
+    return filterActivePassengers(passengers, segmentSeatMapIdxActive);
+  }, [passengers, segmentSeatMapIdxActive]);
+  const seatCodes = useMemo(() => {
+    return showedPassengers
+      ?.map(passenger => passenger?.selectedSeat?.code)
+      .filter(Boolean);
+  }, [showedPassengers]);
+
+  const handleChangeTab = useCallback((tabIdx: number) => {
+    setSegmentSeatMapIdxActive(tabIdx);
+    setActivePassengerIndex(0);
+  }, []);
 
   const handleSelectSeat = useCallback(
     (seat: Seat) => {
       setPassengers(prev =>
         prev.map(passenger => {
-          if (passenger.id === updatedPassengerId) {
+          const [segmentIdx, passengerIdx] = passenger.id.split('-');
+
+          if (
+            + passengerIdx === activePassengerIndex &&
+            + segmentIdx === segmentSeatMapIdxActive
+          ) {
             return {
               ...passenger,
               selectedSeat: seat,
@@ -60,27 +62,18 @@ export const BookingSeats = ({ segmentSeatMaps }: BookingSeatsProps) => {
         })
       );
     },
-    [updatedPassengerId]
+    [activePassengerIndex, segmentSeatMapIdxActive]
   );
 
-  const handleChangePassengerDetail = useCallback(
-    (selectedIndex: number, passengerId: string) => {
-      setActivePassengerIndex(selectedIndex);
-      setUpdatedPassengerId(passengerId);
-    },
-    []
-  );
+  const handleChangePassengerDetail = useCallback((selectedIndex: number) => {
+    setActivePassengerIndex(selectedIndex);
+  }, []);
 
   const renderFlightDetails = () => {
     return <FlightDetails segment={ segmentSeatMapActive?.segment } />;
   };
 
-  const passengerDetails = useMemo(() => {
-    const showedPassengers = filterActivePassengers(
-      passengers,
-      segmentSeatMapIdxActive
-    );
-
+  const renderPassengerDetails = () => {
     return (
       <PassengerDetails
         passengers={ showedPassengers }
@@ -88,12 +81,7 @@ export const BookingSeats = ({ segmentSeatMaps }: BookingSeatsProps) => {
         onChange={ handleChangePassengerDetail }
       />
     );
-  }, [
-    passengers,
-    segmentSeatMapIdxActive,
-    activePassengerIndex,
-    handleChangePassengerDetail,
-  ]);
+  };
 
   return (
     <div className='relative'>
@@ -116,7 +104,7 @@ export const BookingSeats = ({ segmentSeatMaps }: BookingSeatsProps) => {
 
           <div className='max-md:hidden sticky top-10 h-[calc(100vh-180px)] custom-scrollbar overflow-y-auto w-1/2 right-1/2 pr-10 pt-10 z-30 space-y-4'>
             { renderFlightDetails() }
-            { passengerDetails }
+            { renderPassengerDetails() }
           </div>
         </div>
       </div>
@@ -126,7 +114,7 @@ export const BookingSeats = ({ segmentSeatMaps }: BookingSeatsProps) => {
         accordionContent={
           <>
             { renderFlightDetails() }
-            { passengerDetails }
+            { renderPassengerDetails() }
           </>
         }
       />
